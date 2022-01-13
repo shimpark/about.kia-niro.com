@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    @@include('../../includes/resources.html')
+  </head>
+
+  <body>
+    <div id="container">
+      <!-- 헤더 -->
+      @@include('../../includes/header.html')
+      <!-- // 헤더 -->
+      <!-- 컨텐츠 -->
+      <main id="content">
+        <div class="choice-content step02-content">
+          <div class="choice-history-list">
+            <div class="list-item">
+              <div class="step">1. 트림 선택 완료 <strong>[프레스티지]</strong></div>
+              <a href="javascript:void(0);" class="btn-reset">다시 선택하기</a>
+            </div>
+          </div>
+          <div class="choice-subject-area">
+            <div class="step">STEP 02</div>
+            <div class="line"></div>
+            <h2 class="subject">추가 옵션 선택</h2>
+            <div class="sub-text">선택한 트림에 따라 선택할 수 있는 옵션도 다르답니다.</div>
+          </div>
+          <div class="add-option-container">
+            <div class="subject">추가 선택하는 옵션은 금액이 추가돼요!</div>
+            <div class="option-list">
+              <div class="list-item">
+                <div class="selector-wrapper">
+                  <div class="selector-cover checkbox round">
+                    <!-- id와 label의 for값이 같아야합니다 -->
+                    <input type="checkbox" name="checkbox1" id="checkbox1" />
+                    <label for="checkbox1">컨비니언스</label>
+                  </div>
+                  <a href="javascript:openLayerPopup('optionDetailPopup');" class="btn-detail">옵션 상세보기</a>
+                </div>
+                <!-- <div class="price">1,000,000원</div> -->
+              </div>
+              <div class="list-item">
+                <div class="selector-wrapper">
+                  <div class="selector-cover checkbox round">
+                    <!-- id와 label의 for값이 같아야합니다 -->
+                    <input type="checkbox" name="checkbox2" id="checkbox2" />
+                    <label for="checkbox2">컨비니언스</label>
+                  </div>
+                  <a href="javascript:openLayerPopup('optionDetailPopup');" class="btn-detail">옵션 상세보기</a>
+                </div>
+                <!-- <div class="price">1,000,000원</div> -->
+              </div>
+              <div class="list-item">
+                <div class="selector-wrapper">
+                  <div class="selector-cover checkbox round">
+                    <!-- id와 label의 for값이 같아야합니다 -->
+                    <input type="checkbox" name="checkbox3" id="checkbox3" />
+                    <label for="checkbox3">컨비니언스</label>
+                  </div>
+                  <a href="javascript:openLayerPopup('optionDetailPopup');" class="btn-detail">옵션 상세보기</a>
+                </div>
+                <!-- <div class="price">1,000,000원</div> -->
+              </div>
+            </div>
+          </div>
+          <div class="bottom-btn-container">
+            <div class="info-text">
+              그럼 트림 별로 어떤 옵션들이 <br />
+              있는지 알아볼까요?
+            </div>
+            <div class="btn-group">
+              <a href="javascript:void(0);" class="btn large primary">컬러 선택하기</a>
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- //컨텐츠 -->
+
+      <!-- 푸터 -->
+      @@include('../../includes/footer.html')
+      <!-- // 푸터 -->
+
+      <!-- 옵션 자세히 보기 팝업 -->
+      @@include('../../includes/popup/option-detail-popup.html')
+      <!-- // 옵션 자세히 보기 팝업 -->
+    </div>
+  </body>
+</html>

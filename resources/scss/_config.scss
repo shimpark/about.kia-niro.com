@@ -1,0 +1,25 @@
+// 기본 셋팅
+$body-base-font: 'KiaSignature', arial, sans-serif, Arial, dotum, '돋움';
+$body-font-color: #000;
+$base-font-size: 24px;
+$line-height: 1.5;
+
+// base color
+$primary: #5582f5;
+$dark: #222;
+$warning: #ff9582;
+$slightly: #888;
+$lightSlightly: #999;
+$danger: #e0012b;
+
+// point color
+$blue: #a0afc1;
+
+// 미디어쿼리 사이즈
+$tablet-large: 1320px;
+$tablet-small: 1100px;
+$mobile-large: 720px;
+$mobile-small: 359px;
+
+// 이미지 url
+$baseUrl: '../images/';
