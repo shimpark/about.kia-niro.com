@@ -133,7 +133,7 @@ function gsapAnimation() {
 function layerPopupHandler() {
   var layerPopup = $('.layer-popup');
   var popupContainer = layerPopup.find('.popup-container');
-  var closeBtn = layerPopup.find('.btn-close');
+  var closeBtn = layerPopup.find('.btn-close, .popup-close');
   var $body = $('body');
 
   // 팝업닫기
@@ -215,7 +215,7 @@ function scrollHeader() {
     }
   }
 }
-var optionTabSwiper, colorSelectSlider;
+var optionTabSwiper, colorSelectSlider, colorSelectSlider02;
 function sliderMaker() {
   // 컬러 슬라이드
   colorSelectSlider = sliderInit('.color-slider-container', {
@@ -226,6 +226,15 @@ function sliderMaker() {
       prevEl: '.swiper-button-prev',
     },
   });
+
+  // colorSelectSlider02 = sliderInit('#colorSliderContainer02', {
+  //   loop: false,
+  //   slidesPerView: 1,
+  //   navigation: {
+  //     nextEl: '.swiper-button-next',
+  //     prevEl: '.swiper-button-prev',
+  //   },
+  // });
 
   // 트림 선택 탭
   var setTimeSlider = setTimeout(function () {
@@ -475,6 +484,7 @@ function colorSelectTabActive() {
   var $tab = $('.color-select-tab .tab-item');
   var $tabContent = $('.color-select-content .content-item');
   var $colorTab = $('.color-list .color-item');
+  var $colorRadio = $colorTab.find('input[type="radio"]');
 
   $tab.eq(0).addClass('active');
   $tab.on('click', function () {
@@ -483,21 +493,23 @@ function colorSelectTabActive() {
     $tabContent.hide().eq(index).show();
   });
 
-  $colorTab.eq(0).addClass('active');
-  $colorTab.on('click', function () {
-    var index = $(this).index();
-    colorTabFn(index);
-    colorSelectSlider.slideTo(index);
-    colorSelectSlider.update();
+  colorTabFn(0, 0);
+  $colorRadio.on('change', function () {
+    var index = $(this).closest('.color-item').index();
+    var colorListIndex = Number($(this).closest('.color-list').attr('data-index'));
+    colorSelectSlider[colorListIndex].slideTo(index);
+    colorSelectSlider[colorListIndex].update();
   });
+  for (var i = 0; i < colorSelectSlider.length; i++) {
+    colorSelectSlider[i].on('slideChange', function (swiper) {
+      var sliderIndex = Number($(swiper.$el[0]).attr('data-index'));
+      var activeIndex = swiper.activeIndex;
+      colorTabFn(sliderIndex, activeIndex);
+    });
+  }
 
-  colorSelectSlider.on('slideChange', function (swiper) {
-    var activeIndex = swiper.activeIndex;
-    colorTabFn(activeIndex);
-  });
-
-  function colorTabFn(index) {
-    $colorTab.eq(index).addClass('active').siblings('').removeClass('active');
+  function colorTabFn(sliderIndex, activeIndex) {
+    $tabContent.eq(sliderIndex).find('.color-item').eq(activeIndex).find('input[type="radio"]').prop('checked', true);
   }
 }
 

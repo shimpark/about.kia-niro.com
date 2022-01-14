@@ -11,10 +11,15 @@
     font-size: rem(13px);
   }
   &.medium {
-    height: rem(47px);
-    line-height: rem(45px);
+    height: rem(52px);
+    line-height: rem(50px);
     padding: 0 rem(13px);
-    font-size: rem(15px);
+    border-radius: rem(4px);
+    font-weight: 700;
+    font-size: rem(18px);
+    &.normal {
+      font-weight: 400;
+    }
   }
   &.large {
     height: rem(60px);
