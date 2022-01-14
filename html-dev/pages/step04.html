@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    @@include('../../includes/resources.html')
+  </head>
+
+  <body>
+    <div id="container">
+      <!-- 헤더 -->
+      @@include('../../includes/header.html')
+      <!-- // 헤더 -->
+
+      <!-- 컨텐츠 -->
+      <main id="content">
+        <div class="choice-content step-complete-content">
+          <div class="section-inner">
+            <div class="step-complete-subject">
+              <h3>나만의 니로 완성!</h3>
+            </div>
+            <div class="car-select-complpete-box">
+              <div class="car-select-intro">
+                <div class="car-type"><span>프레스티지</span></div>
+                <div class="car-image"><img src="../../resources/images/img-car-color-black.png" alt="프레스티지" /></div>
+              </div>
+              <div class="car-info-item">
+                <strong class="subject">컬러 선택</strong>
+                <div class="color-list">
+                  <div class="list-item">
+                    <div class="type">외장</div>
+                    <!-- 
+                      외장 색상별 클래스
+                      1. 시티스케이프 그린 - green
+                      2. 런웨이 레드 - red
+                      3. 미네랄 블루 - blue
+                      4. 스노우 화이트 펄 - white
+                      5. 스틸 그레이 - steelgrey
+                      6. 인터스텔라 그레이 - stela-grey
+                      7. 오로라 블랙 펄 - black
+                     -->
+                    <div class="color"><i class="circle green"></i>시티스케이프 그린</div>
+                  </div>
+                  <div class="list-item">
+                    <div class="type">내장</div>
+                    <!-- 
+                      내장 색상별 클래스
+                      1. 차콜 그레이 - charcoal-grey
+                      2. 미디움 그레이 - medium-grey
+                      3. 페트롤 - petrol
+                     -->
+                    <div class="color"><i class="circle medium-grey"></i>미디움 그레이</div>
+                  </div>
+                </div>
+              </div>
+              <div class="car-info-item">
+                <strong class="subject">선택 옵션</strong>
+                <div class="sub-text">옵션을 클릭하면 상세 내용 확인이 가능합니다</div>
+                <div class="option-detail-components">
+                  <div class="option-item active">205/60 R16 타이어&amp;전면가공 휠</div>
+                  <div class="option-item active">프로젝션 헤드램프</div>
+                  <div class="option-item active">LED 포그램프</div>
+                  <div class="option-item active">LED 리어 콤비네이션램프</div>
+                  <div class="option-item active">LED 리피터 일체형 아웃사이드 미러</div>
+                  <div class="option-item active">윈드쉴드 이중접합 차음 글라스</div>
+                </div>
+              </div>
+            </div>
+            <div class="bottom-btn-container">
+              <div class="btn-group">
+                <a href="javascript:void(0);" class="btn large primary">최종 견적 확인하기</a>
+                <a href="javascript:void(0);" class="btn large border white normal">트림/옵션 다시 선택하기</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- //컨텐츠 -->
+
+      <!-- 푸터 -->
+      @@include('../../includes/footer.html')
+      <!-- // 푸터 -->
+    </div>
+  </body>
+</html>
