@@ -344,7 +344,20 @@ img {
   }
 }
 .choice-content {
+  position: relative;
   background-color: #242d43;
+  .bg-flower {
+    transform: translateX(-50%);
+    position: absolute;
+    top: rem(7px);
+    left: 50%;
+    z-index: 1;
+    width: calc(100% - 32px);
+    max-width: rem(500px);
+    img {
+      width: 100%;
+    }
+  }
 }
 .choice-subject-area {
   padding-top: rem(48px);
@@ -845,15 +858,21 @@ img {
   }
 }
 .step-complete-subject {
-  text-align: center;
+  position: relative;
+  z-index: 1;
   padding-top: rem(40px);
+  text-align: center;
   h3 {
+    position: relative;
+    z-index: 2;
     font-weight: 300;
     font-size: rem(20px);
     color: #fff;
   }
 }
 .car-select-complpete-box {
+  position: relative;
+  z-index: 2;
   margin-top: rem(35px);
   padding: rem(25px) rem(32px) rem(30px);
   border-radius: rem(10px);
@@ -982,12 +1001,13 @@ img {
       font-size: rem(24px);
       word-break: break-all;
     }
-    .info-text {
-      margin-top: rem(24px);
-      line-height: rem(26px);
-      font-size: rem(16px);
-      letter-spacing: -0.06rem;
-    }
+  }
+  .info-text {
+    margin-top: rem(24px);
+    line-height: rem(26px);
+    text-align: center;
+    font-size: rem(16px);
+    letter-spacing: -0.06rem;
   }
   .btn-group {
     margin-top: rem(40px);
@@ -998,6 +1018,9 @@ img {
       }
     }
   }
+  .my-storagebox-empty-content & {
+    margin-top: rem(40px);
+  }
 }
 .store-banner {
   display: block;
@@ -1005,6 +1028,7 @@ img {
   margin-top: rem(16px);
   height: rem(120px);
   border-radius: rem(10px);
+  overflow: hidden;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
@@ -1036,6 +1060,18 @@ img {
     z-index: 1;
     @include _background('bg-store-banner.png');
     background-size: cover;
+  }
+}
+.car-select-empty-content {
+  margin-top: rem(40px);
+  text-align: center;
+  .info-text {
+    font-weight: 300;
+    font-size: rem(14px);
+    color: #fff;
+  }
+  .btn {
+    margin-top: rem(20px);
   }
 }
 // 푸터

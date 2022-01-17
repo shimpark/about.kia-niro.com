@@ -221,3 +221,18 @@
     color: #989898;
   }
 }
+.kakao-login-popup {
+  .popup-title {
+    font-weight: 700;
+    font-size: rem(22px);
+  }
+  .btn-group {
+    margin-top: rem(40px);
+    .btn {
+      display: block;
+      width: 100%;
+      border-color: #fce400;
+      background-color: #fce400;
+    }
+  }
+}
