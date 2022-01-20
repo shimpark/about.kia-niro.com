@@ -6,14 +6,11 @@ html {
   @media (max-width: $mobile-small) {
     font-size: $base-font-size - 2px;
   }
-  @media (min-width: $mobile-large) {
-    font-size: $base-font-size + 3px;
-  }
+  // @media (min-width: $mobile-large) {
+  //   font-size: $base-font-size + 2px;
+  // }
   @media (min-width: $tablet-small) {
-    font-size: $base-font-size + 5px;
-  }
-  @media (min-width: $tablet-large) {
-    font-size: $base-font-size + 7px;
+    font-size: $base-font-size + 3px;
   }
 }
 

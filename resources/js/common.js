@@ -6,7 +6,7 @@ $(document).ready(function () {
   // 모바일메뉴 핸들러
   mobileMenuHandler();
   // 헤더 스크롤감지
-  scrollHeader();
+  // scrollHeader();
   // 슬라이드
   sliderMaker();
   // 아코디언 핸들러
@@ -27,6 +27,8 @@ $(document).ready(function () {
   tabMoveController();
   // 컬러 탭 활성화
   colorSelectTabActive();
+  // 소개 애니메이션
+  introAnimation();
   // 숫자 카운팅
   // new NumberCounter('countNumber');
 });
@@ -47,10 +49,14 @@ function gsapAnimation() {
     var _this = $(this);
     gsap.to(startCount, {
       var: number,
-      duration: 3,
+      duration: 3.5,
       ease: 'ease',
       onUpdate: function () {
-        _this.text(startCount.var.toFixed(1));
+        if (Number.isInteger(number)) {
+          _this.text(startCount.var.toFixed(0));
+        } else {
+          _this.text(startCount.var.toFixed(1).replace(/\.?0+$/, ''));
+        }
       },
       scrollTrigger: {trigger: _this},
     });
@@ -119,15 +125,84 @@ function gsapAnimation() {
     if ($(section).hasClass('main-more-animation')) {
       var subject = $(section).find('.subject');
       var subText = $(section).find('.sub-text');
+      var carImg = $(section).find('.car-img');
       var introText = $(section).find('.intro-text');
       var btnIntro = $(section).find('.btn-intro');
 
       tl.from(subject, {opacity: 0, x: 100, duration: 0.8}, 0.3);
       tl.from(subText, {opacity: 0, x: -100, duration: 0.8}, 0.5);
+      tl.from(carImg, {opacity: 0, y: 100, duration: 0.8}, 0.7);
       tl.from(introText, {opacity: 0, y: -50, duration: 0.6}, 0.3);
       tl.from(btnIntro, {opacity: 0, scaleX: 0, duration: 0.5}, 0.6);
     }
   });
+}
+
+function introAnimation() {
+  if (!$('.intro-fixed-section').length) return;
+  var tl = gsap.timeline({});
+  tl.set('#footer', {display: 'none'});
+  tl.set('body', {overflow: 'hidden'});
+  var paddingTop = 150 / 24 + 'rem';
+  var wheelFlag = true;
+
+  if ($(this).width() >= 1220) paddingTop = 0;
+  $(document).on('DOMMouseScroll mousewheel wheel', function (event) {
+    if (wheelFlag) {
+      if (event.originalEvent.deltaY > 0) {
+        wheelFlag = false;
+        animationFn();
+      }
+    }
+  });
+
+  $(document).on('touchstart', function (event) {
+    startY = event.originalEvent.changedTouches[0].screenY;
+  });
+
+  $(document).on('touchend', function (event) {
+    endY = event.originalEvent.changedTouches[0].screenY;
+    if (wheelFlag) {
+      if (startY - endY > 20) {
+        wheelFlag = false;
+        animationFn();
+      }
+    }
+  });
+
+  function animationFn() {
+    tl.to('.intro-fixed-img', {scale: 1.2, autoAlpha: 0, duration: 2.8, ease: Expo.easeOut}).to(
+      '.intro-fixed-title',
+      {
+        bottom: 'auto',
+        top: 100,
+        duration: 1,
+        ease: Power3.easeOut,
+        onStart: function () {
+          $('.intro-fixed-title .icon-scroll').fadeOut();
+          $('.intro-fixed-title').addClass('start');
+          $('.mobile-icon-scroll').hide();
+          $('#header').removeClass('fix');
+        },
+      },
+      1
+    );
+    tl.to(
+      '.intro-float-content',
+      {
+        position: 'relative',
+        y: 0,
+        paddingTop: paddingTop,
+        duration: 0.5,
+        ease: Power3.easeOut,
+        onComplete: function () {
+          $('body').css('overflow', 'visible');
+          $('.intro-float-content').addClass('complete');
+        },
+      },
+      1.5
+    ).to('#footer', {display: 'block'});
+  }
 }
 
 function layerPopupHandler() {
@@ -510,6 +585,10 @@ function colorSelectTabActive() {
 
   function colorTabFn(sliderIndex, activeIndex) {
     $tabContent.eq(sliderIndex).find('.color-item').eq(activeIndex).find('input[type="radio"]').prop('checked', true);
+    //luckshim 2022.01.17
+    if (sliderIndex == 0) {
+      $('input[name=fillerGarnish]').prop('checked', false);
+    }
   }
 }
 

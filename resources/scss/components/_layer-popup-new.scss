@@ -123,7 +123,6 @@
     padding: rem(32px) 0;
     border-top: 1px solid rgba(#666, 0.3);
     &:first-child {
-      padding-top: rem(40px);
       border-top: 0;
     }
     &:last-child {
@@ -133,9 +132,14 @@
       display: block;
       line-height: rem(20px);
       font-size: rem(16px);
+      + .thumbnail {
+        margin-top: rem(8px);
+      }
+      + .description {
+        margin-top: rem(16px);
+      }
     }
     .description {
-      margin-top: rem(16px);
       line-height: rem(17px);
       font-size: rem(14px);
       color: #666;

@@ -7,11 +7,103 @@
   <body>
     <div id="container">
       <!-- 헤더 -->
-      @@include('../../includes/header.html')
+      <!-- 0119 메인과 소개 페이지에만 fix 클래스 적용 -->
+      @@include('../../includes/header.html',{type: "fix"})
       <!-- // 헤더 -->
 
       <!-- 컨텐츠 -->
-      <main id="content"></main>
+      <main id="content">
+        <div class="intro-content">
+          <section class="intro-fixed-section">
+            <div class="intro-fixed-title">
+              <h2 class="title">
+                <span class="step">첫번째</span>
+                <span class="text">트림을 선택해야해요!</span>
+              </h2>
+              <div class="icon-scroll">
+                <!-- 0119 이미지 태그 추가 및 클래스 추가 -->
+                <img src="../../resources/images/icon/icon-mouse-bk.png" alt="마우스스크롤" class="mobile-show" />
+                <img src="../../resources/images/icon/icon-mouse.svg" alt="마우스스크롤" class="pc-show" />
+              </div>
+            </div>
+            <div class="intro-fixed-img"></div>
+            <div class="intro-float-content fixed">
+              <div class="intro-section intro-section01">
+                <div class="img-car side"><img src="../../resources/images/img-intro-car-side.png" alt="기아 니로" /></div>
+                <div class="text-area">
+                  <!-- 0119 태그추가 -->
+                  <div class="text-inner">
+                    <strong class="intro-text font-26">기아 니로는</strong>
+                    <div class="intro-text font-18">
+                      <!-- 0119 br태그 및 클래스 추가 -->
+                      <span class="grey"
+                        >100가지가 넘는<br class="pc-show" />
+                        다양한 옵션들이 있어요!</span
+                      ><br />
+                      기아가 추천하는 옵션을<br class="pc-show" />
+                      ‘트림’으로 묶어 놨죠
+                    </div>
+                  </div>
+                  <!-- 0119 태그추가 -->
+                  <div class="niro-logo"><img src="../../resources/images/text-niro-pc.png" alt="NIRO" class="pc-show" /></div>
+                </div>
+                <div class="img-car front">
+                  <img src="../../resources/images/img-intro-car-front.png" alt="기아 니로" />
+                </div>
+              </div>
+              <div class="intro-section intro-section02">
+                <div class="trim-step-text">
+                  <div class="intro-text font-24 light">니로는</div>
+                  <div class="trim-step">
+                    <span>트렌디</span>
+                    <span>프레스티지</span>
+                    <span>시그니처</span>
+                  </div>
+                  <div class="intro-text mt16 font-18">총 세가지의 트림이 있어요.</div>
+                </div>
+                <div class="trim-detail-text">
+                  <div class="intro-text font-18 light mt32">
+                    ‘트림’ 등급이 높아질 수록<br />
+                    <!-- 0119 br태그 클래스추가 -->
+                    기본적으로 포함되는 옵션이 많아지고,<br class="mobile-show" />
+                    추가 선택할 수 있는 옵션이 다양해져요 😙
+                  </div>
+                  <!-- 0119 태그 추가 -->
+                  <div class="detail-wrapper">
+                    <div class="detail-img"><img src="../../resources/images/img-trim-detail.svg" alt="시그니처, 프레트시티, 트랜디" /></div>
+                    <div class="trim-description">
+                      <div class="intro-text font-18 light">
+                        <!-- 0119 br태그 클래스 추가 -->
+                        <strong>시그니처</strong>는 프레스티지의<br class="mobile-show" />
+                        모든 기본 옵션을 갖고 있고,
+                      </div>
+                      <div class="intro-text font-18 light">
+                        <!-- 0119 br태그 클래스 추가 -->
+                        <strong>프레스티지</strong>는 트렌디의<br class="mobile-show" />
+                        모든 기본 옵션을 갖고 있죠!
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="intro-section intro-section03">
+                <div class="trim-select">
+                  <!-- 0119 br태그 클래스 추가 -->
+                  <div class="intro-text font-16">
+                    그럼 트림 별로 어떤 옵션들이<br class="mobile-show" />
+                    있는지 알아볼까요?
+                  </div>
+                  <a href="javascript:void(0);" class="btn large primary">트림 선택하기</a>
+                </div>
+              </div>
+            </div>
+            <!-- 0119 스크롤 태그 추가 -->
+            <div class="mobile-icon-scroll pc-show">
+              <img src="../../resources/images/icon/icon-mouse.svg" alt="마우스스크롤" />
+            </div>
+          </section>
+        </div>
+      </main>
       <!-- //컨텐츠 -->
 
       <!-- 푸터 -->
