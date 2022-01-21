@@ -333,6 +333,16 @@
 
 .kakao-login-popup .btn-group .btn { display: block; width: 100%; border-color: #fce400; background-color: #fce400; }
 
+.policy-popup .popup-title { padding-bottom: 0.83333rem; border-bottom: 1px solid #000; font-weight: 700; font-size: 0.83333rem; }
+
+.policy-popup .policy-content { padding-top: 1.04167rem; }
+
+.policy-popup .policy-item .title { display: block; margin: 1.25rem 0 0.625rem 0; font-weight: 700; font-size: 0.75rem; }
+
+.policy-popup .policy-text { font-weight: 300; font-size: 0.66667rem; word-break: keep-all; }
+
+.policy-popup .policy-text + .policy-text { margin-top: 0.83333rem; }
+
 /* reset */
 /* rem 설정을 위한 폰트 */
 html { font-size: 24px; }
