@@ -273,7 +273,7 @@ $header-height: 36px;
       align-items: center;
       width: 50%;
       .text-area {
-        max-width: 320px;
+        max-width: 340px;
         margin: 0 auto;
         // transform: translate(-50%, -50%);
         // position: absolute;
@@ -322,13 +322,14 @@ $header-height: 36px;
     }
   }
   .car-image {
+    flex-grow: 1;
     position: relative;
     z-index: 2;
     @media (min-width: $tablet-small) {
       width: 50%;
     }
     img {
-      width: 100%;
+      @include size(100%);
     }
   }
 }
@@ -705,9 +706,11 @@ $header-height: 36px;
     border: 1px solid #989898;
     font-size: rem(14px);
     background-color: #fff;
+    color: #989898;
     &.active {
-      color: $primary;
+      color: #fff;
       border-color: $primary;
+      background-color: $primary;
     }
   }
 }
@@ -791,6 +794,7 @@ $header-height: 36px;
     }
   }
   .option-detail-box {
+    margin-top: rem(25px);
     padding: rem(21px) 0 rem(27px) rem(16px);
     background-color: #f6f9fa;
   }
@@ -926,6 +930,11 @@ $header-height: 36px;
 .step-complete-content {
   padding-bottom: rem(60px);
 }
+.step-complete-content {
+  .bottom-btn-container {
+    padding-top: rem(17px);
+  }
+}
 .color-select-container {
   margin-top: rem(40px);
   border-radius: rem(10px);
@@ -1021,6 +1030,7 @@ $header-height: 36px;
           background-color: #1d3242;
         }
         &.white {
+          border-color: #bdbdbd;
           background-color: #f5f7f4;
         }
         &.steel-grey {
@@ -1237,6 +1247,16 @@ $header-height: 36px;
     .type {
       line-height: rem(20px);
       font-size: rem(16px);
+    }
+    .copy-coupon {
+      margin-top: rem(8px);
+      text-align: center;
+      a {
+        display: inline-block;
+        color: rgba(#000, 0.5);
+        border-bottom: 1px solid rgba(#000, 0.5);
+        font-size: rem(14px);
+      }
     }
     .coupon-box {
       padding: rem(24px);
@@ -1637,6 +1657,28 @@ $header-height: 36px;
         width: 300px;
       }
     }
+  }
+}
+.coupon-tooltip {
+  margin-top: rem(37px);
+  text-align: center;
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .icon {
+    display: block;
+    @include size(rem(20px));
+    @include _background('icon/icon-hands-down.png');
+    background-size: cover;
+  }
+  .text {
+    margin-left: rem(6px);
+    border-bottom: 1px solid #fff8b6;
+    line-height: rem(18px);
+    font-size: rem(15px);
+    color: #fff8b6;
   }
 }
 // 푸터
