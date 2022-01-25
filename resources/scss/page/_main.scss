@@ -870,6 +870,18 @@ $header-height: 36px;
     text-align: center;
     line-height: rem(20px);
     font-size: rem(16px);
+    .icon-question {
+      display: inline-block;
+      margin-right: rem(4px);
+      margin-top: rem(-3px);
+      @include size(rem(20px));
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: rem(14px) rem(14px);
+      @include _background-image('icon/icon-question.png');
+      text-indent: -9999px;
+      vertical-align: middle;
+    }
   }
   .option-list {
     margin-top: rem(20px);

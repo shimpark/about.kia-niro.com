@@ -768,6 +768,8 @@ img { display: block; max-width: 100%; }
 
 .add-option-container .subject { display: block; text-align: center; line-height: 0.83333rem; font-size: 0.66667rem; }
 
+.add-option-container .subject .icon-question { display: inline-block; margin-right: 0.16667rem; margin-top: -0.125rem; width: 0.83333rem; height: 0.83333rem; background-repeat: no-repeat; background-position: 50% 50%; background-size: 0.58333rem 0.58333rem; background-image: url("../images/icon/icon-question.png"); text-indent: -9999px; vertical-align: middle; }
+
 .add-option-container .option-list { margin-top: 0.83333rem; }
 
 .add-option-container .list-item { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; padding: 0.66667rem 0; border-top: 1px solid #dedede; }

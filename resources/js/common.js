@@ -587,7 +587,7 @@ function colorSelectTabActive() {
     $tabContent.eq(sliderIndex).find('.color-item').eq(activeIndex).find('input[type="radio"]').prop('checked', true);
     //luckshim 2022.01.17
     if (sliderIndex == 0) {
-      $('input[name=fillerGarnish]').prop('checked', false);
+        if (typeof GarnishSelected === "function") { GarnishSelected(); }
     }
   }
 }
