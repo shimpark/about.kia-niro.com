@@ -848,11 +848,11 @@ img { display: block; max-width: 100%; }
 
 .color-select-container .color-list .color-item label.black { background-color: #080809; }
 
-.color-select-container .color-list .color-item label.charcoal-grey { background-color: #999; }
+.color-select-container .color-list .color-item label.charcoal-grey { background-color: #282526; }
 
-.color-select-container .color-list .color-item label.medium-grey { background-color: #d1d1d1; }
+.color-select-container .color-list .color-item label.medium-grey { background-color: #383739; }
 
-.color-select-container .color-list .color-item label.petrol { background-color: brown; }
+.color-select-container .color-list .color-item label.petrol { background-color: #202a37; }
 
 .color-slider-container { margin-top: 0.83333rem; }
 
@@ -950,13 +950,23 @@ img { display: block; max-width: 100%; }
 
 .my-storagebox-empty-content .preview-event-box { margin-top: 1.66667rem; }
 
-.store-banner { display: block; position: relative; margin-top: 0.66667rem; height: 5rem; border-radius: 0.41667rem; overflow: hidden; background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; background-image: url("../images/img-store-banner.png"); }
+.store-banner-container { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; }
+
+.store-banner-container .store-banner { width: calc(50% - 0.16667rem); }
+
+.store-banner-container .store-banner + .store-banner { margin-left: 0.33333rem; }
+
+.store-banner { display: block; position: relative; margin-top: 0.66667rem; height: 5rem; border-radius: 0.41667rem; overflow: hidden; text-align: right; background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; background-image: url("../images/img-store-banner.png"); }
 
 @media (min-width: 600px) { .store-banner { height: 6.66667rem; } }
 
 @media (min-width: 1220px) { .store-banner { height: 9.16667rem; } }
 
-.store-banner .text { -webkit-transform: translateY(-50%); transform: translateY(-50%); position: absolute; top: 50%; left: calc(50% + 17px); z-index: 2; line-height: 0.91667rem; font-weight: 700; font-size: 0.75rem; }
+.store-banner:nth-child(1) { background-image: url("../images/img-store-banner.png"); }
+
+.store-banner:nth-child(2) { background-image: url("../images/img-store-banner-02.png"); }
+
+.store-banner .text { -webkit-transform: translateY(-50%); transform: translateY(-50%); position: absolute; top: 50%; right: 0.625rem; z-index: 2; line-height: 0.91667rem; font-weight: 700; font-size: 0.75rem; }
 
 .store-banner .text-bg { width: 50%; height: 100%; position: absolute; top: 0; right: 0; z-index: 1; background: url("../images/bg-store-banner.png") no-repeat 0 0; background-size: cover; }
 

@@ -1055,13 +1055,13 @@ $header-height: 36px;
           background-color: #080809;
         }
         &.charcoal-grey {
-          background-color: #999;
+          background-color: #282526;
         }
         &.medium-grey {
-          background-color: #d1d1d1;
+          background-color: #383739;
         }
         &.petrol {
-          background-color: brown;
+          background-color: #202a37;
         }
       }
       &.white {
@@ -1299,6 +1299,16 @@ $header-height: 36px;
     margin-top: rem(40px);
   }
 }
+.store-banner-container {
+  display: flex;
+  flex-wrap: wrap;
+  .store-banner {
+    width: calc(50% - #{rem(4px)});
+    + .store-banner {
+      margin-left: rem(8px);
+    }
+  }
+}
 .store-banner {
   display: block;
   position: relative;
@@ -1306,6 +1316,7 @@ $header-height: 36px;
   height: rem(120px);
   border-radius: rem(10px);
   overflow: hidden;
+  text-align: right;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
@@ -1316,11 +1327,17 @@ $header-height: 36px;
   @media (min-width: $tablet-small) {
     height: rem(220px);
   }
+  &:nth-child(1) {
+    @include _background-image('img-store-banner.png');
+  }
+  &:nth-child(2) {
+    @include _background-image('img-store-banner-02.png');
+  }
   .text {
     transform: translateY(-50%);
     position: absolute;
     top: 50%;
-    left: calc(50% + 17px);
+    right: rem(15px);
     z-index: 2;
     line-height: rem(22px);
     font-weight: 700;
@@ -1336,6 +1353,7 @@ $header-height: 36px;
     background-size: cover;
   }
 }
+
 .car-select-empty-content {
   margin-top: rem(40px);
   text-align: center;
@@ -1693,6 +1711,7 @@ $header-height: 36px;
     color: #fff8b6;
   }
 }
+
 // 푸터
 #footer {
   position: relative;
