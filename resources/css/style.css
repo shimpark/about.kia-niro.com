@@ -914,11 +914,11 @@ img { display: block; max-width: 100%; }
 
 .car-select-complpete-box .car-info-item .list-item .circle.black { background-color: #080809; }
 
-.car-select-complpete-box .car-info-item .list-item .circle.charcoal-grey { background-color: #999; }
+.car-select-complpete-box .car-info-item .list-item .circle.charcoal-grey { background-color: #282526; }
 
-.car-select-complpete-box .car-info-item .list-item .circle.medium-grey { background-color: #d1d1d1; }
+.car-select-complpete-box .car-info-item .list-item .circle.medium-grey { background-color: #383739; }
 
-.car-select-complpete-box .car-info-item .list-item .circle.petrol { background-color: brown; }
+.car-select-complpete-box .car-info-item .list-item .circle.petrol { background-color: #202a37; }
 
 .car-select-complpete-box .car-info-item .option-detail-components { margin-top: 1rem; }
 
@@ -968,7 +968,7 @@ img { display: block; max-width: 100%; }
 
 .store-banner .text { -webkit-transform: translateY(-50%); transform: translateY(-50%); position: absolute; top: 50%; right: 0.625rem; z-index: 2; line-height: 0.91667rem; font-weight: 700; font-size: 0.75rem; }
 
-.store-banner .text-bg { width: 50%; height: 100%; position: absolute; top: 0; right: 0; z-index: 1; background: url("../images/bg-store-banner.png") no-repeat 0 0; background-size: cover; }
+.store-banner .text-bg { display: none; width: 50%; height: 100%; position: absolute; top: 0; right: 0; z-index: 1; background: url("../images/bg-store-banner.png") no-repeat 0 0; background-size: cover; }
 
 .car-select-empty-content { margin-top: 1.66667rem; text-align: center; }
 

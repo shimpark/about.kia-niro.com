@@ -1220,13 +1220,13 @@ $header-height: 36px;
           background-color: #080809;
         }
         &.charcoal-grey {
-          background-color: #999;
+          background-color: #282526;
         }
         &.medium-grey {
-          background-color: #d1d1d1;
+          background-color: #383739;
         }
         &.petrol {
-          background-color: brown;
+          background-color: #202a37;
         }
       }
     }
@@ -1324,6 +1324,7 @@ $header-height: 36px;
   @media (min-width: 600px) {
     height: rem(160px);
   }
+
   @media (min-width: $tablet-small) {
     height: rem(220px);
   }
@@ -1344,6 +1345,7 @@ $header-height: 36px;
     font-size: rem(18px);
   }
   .text-bg {
+    display: none;
     @include size(50%, 100%);
     position: absolute;
     top: 0;
